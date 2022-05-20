@@ -5,31 +5,29 @@ from matplotlib.widgets import Slider, Button
 
 # The parametrized function to be plotted
 
-def fx(u, A, epsilon, h):
+def fx(u, epsilon,A, h):
     return h*(np.cos(u)+epsilon)
 
-def fy(u, A, epsilon, h):
+def fy(u, epsilon,A, h):
     return h*A*np.sin(u)
 
 def fA(eps):
     return np.sqrt((1-eps)/(1+eps))
 
 u = np.linspace(0, 2*np.pi, 100)
-epsilon = 0.2
+epsilon = 0.5
 A = np.sqrt((1-epsilon)/(1+epsilon))
-
-h = 9
+h = 4
 
 # Create the figure and the line that we will manipulate
 fig, ax = plt.subplots()
 
-fig.set_figwidth(7)
+fig.set_figwidth(10)
 fig.set_figheight(10)
 
 line, = plt.plot(fx(u,epsilon,A,h), fy(u,epsilon,A,h), lw=2)
-ax.set_xlabel('Time [s]')
-plt.axhline(y = 0, color="black", linestyle="--")
-plt.axvline(x = 0, color="black", linestyle="--")
+plt.axhline(y=0, color="black", linestyle="--")
+plt.axvline(x=0, color="black", linestyle="--")
 plt.xlim([-10, 10])
 plt.ylim([-10, 10])
 
@@ -40,8 +38,8 @@ plt.subplots_adjust(left=0.25, bottom=0.25)
 axh = plt.axes([0.25, 0.1, 0.65, 0.03])
 h_slider = Slider(
     ax=axh,
-    label='Frequency [Hz]',
-    valmin=-10,
+    label='Function of Time',
+    valmin=0,
     valmax=10,
     valinit=h,
 )
@@ -50,7 +48,7 @@ h_slider = Slider(
 axepsilon = plt.axes([0.1, 0.25, 0.0225, 0.63])
 epsilon_slider = Slider(
     ax=axepsilon,
-    label="Amplitude",
+    label='Ecentricity (Wind)',
     valmin=0,
     valmax=1,
     valinit=epsilon,
