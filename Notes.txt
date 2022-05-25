@@ -2,3 +2,6 @@ Added parametric equation for elipse
 Made elipse variable with sliders using matplotlib package
 
 Next step is to find u as a function of h. Problem is that I don't understand the integration of the derivitive du/dh, as the upper limit seems to be referencing itself, with u(h).
+
+Modeled equation is on desmos at https://www.desmos.com/calculator/rhdsg1tzea
+*Note, desmos only accepts t as an angle in a parametric equation, so I substituted t for u
