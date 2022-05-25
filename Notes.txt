@@ -1,1 +1,4 @@
-Test 123
+Added parametric equation for elipse
+Made elipse variable with sliders using matplotlib package
+
+Next step is to find u as a function of h. Problem is that I don't understand the integration of the derivitive du/dh, as the upper limit seems to be referencing itself, with u(h).
